@@ -1,0 +1,39 @@
+BACKUP ~Alcool\backup~
+AUTHOR ~http://www.baldursgateworld.fr/lacouronne/les-pepites-de-cespenar/~
+
+VERSION ~V2~
+
+ALWAYS
+  ACTION_DEFINE_ARRAY MCreload BEGIN setup-alcool END
+
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charsets = 1
+    STR_VAR
+      tra_path = EVAL ~%MOD_FOLDER%~
+      reload_array = MCreload
+  END
+END
+
+AUTO_TRA ~Alcool/%s~
+
+
+LANGUAGE ~Francais~
+~francais~
+~Alcool/francais/setup-alcool.tra~
+
+LANGUAGE ~English~
+~english~
+~Alcool/english/setup-alcool.tra~
+
+LANGUAGE ~Castellano~
+~castellano~
+~Alcool/castellano/setup-alcool.tra~
+
+LANGUAGE ~Russian~
+~russian~
+~Alcool/russian/setup-alcool.tra~
+
+BEGIN @0
+
+COMPILE ~Alcool\MCAlcool.D~
